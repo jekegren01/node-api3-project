@@ -2,7 +2,7 @@
 const express = require('express')
 const logger = require('./middleware/logger')
 const userRouter = require('./users/userRouter')
-// const postRouter = require('./posts/postRouter')
+const postRouter = require('./posts/postRouter')
 
 const server = express()
 const port = 4000
@@ -16,7 +16,7 @@ server.get('/', (req, res) => {
   });
   
 server.use(userRouter)
-// server.use(postRouter)
+server.use(postRouter)
 
 
 server.use((err, req, res, next) => {
